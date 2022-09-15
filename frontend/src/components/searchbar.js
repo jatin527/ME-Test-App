@@ -27,7 +27,7 @@ function Searchbar() {
       })
       .then((text) => {
         const result = text.split('id="company/');
-        const result1 = [];
+        const result1 = new Array();
         for (let i = 1; i < 6; i++) {
           const newData = result[i].split('">')[0];
           result1[i - 1] = newData.split("/");
@@ -62,12 +62,13 @@ function Searchbar() {
             ></input>
           </div>
           <div>
-          {company.map(company=> (
-                <tr>
-                    <td>{company.cid}</td>
-                    <td>{company.name}</td>
-                </tr>
-            ))}
+            {/* {company.map((company) => (
+              <tr>
+                <td>{company.cid}</td>
+                <td>{company.name}</td>
+              </tr>
+            ))} */}
+            
           </div>
           <button className="btn btn-primary" onClick={navigateTohome}>
             {" "}
